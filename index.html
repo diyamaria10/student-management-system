@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">STUDENT PORTAL / RECORDS</p>
+                <h1>Student Management</h1>
+                <p class="subtitle">A simple space to manage your classroom records.</p>
+            </div>
+            <span class="status-label">● Academic Records</span>
+        </header>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <p>Total students</p>
+                <h2 id="totalStudents">0</h2>
+            </article>
+            <article class="stat-card">
+                <p>Class average</p>
+                <h2 id="classAverage">0.00</h2>
+            </article>
+            <article class="stat-card">
+                <p>Highest average</p>
+                <h2 id="highestAverage">0.00</h2>
+            </article>
+        </section>
+
+        <section class="form-container">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">NEW ENTRY</p>
+                    <h2>Add a student</h2>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <label>
+                    Student name
+                    <input type="text" id="name" placeholder="Enter full name">
+                </label>
+                <label>
+                    Roll number
+                    <input type="text" id="roll" placeholder="Enter roll number">
+                </label>
+                <label>
+                    Subject 1
+                    <input type="number" id="mark1" placeholder="0–100" min="0" max="100">
+                </label>
+                <label>
+                    Subject 2
+                    <input type="number" id="mark2" placeholder="0–100" min="0" max="100">
+                </label>
+                <label>
+                    Subject 3
+                    <input type="number" id="mark3" placeholder="0–100" min="0" max="100">
+                </label>
+            </div>
+
+            <button onclick="addStudent()" id="submitBtn">Add student <span>＋</span></button>
+        </section>
+
+        <section class="records-container">
+            <div class="records-header">
+                <div>
+                    <p class="eyebrow">CLASS DIRECTORY</p>
+                    <h2>Student records</h2>
+                </div>
+                <input type="search" id="search" placeholder="Search by name or roll number..." oninput="searchStudents()">
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Roll number</th>
+                            <th>Total</th>
+                            <th>Average</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentList"></tbody>
+                </table>
+                <p id="emptyMessage" class="empty-message">No student records yet. Add your first student above.</p>
+            </div>
+        </section>
+
+        <footer>Student Management System <span>•</span> Built for the classroom</footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
